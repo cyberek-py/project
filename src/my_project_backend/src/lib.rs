@@ -1,3 +1,4 @@
+
 use std::cell::RefCell;
 
 thread_local! {
@@ -6,6 +7,7 @@ thread_local! {
 
 #[ic_cdk::update]
 fn add_msg(new_msg: String) {
+    
     CHAT.with(|chat| {
         chat.borrow_mut().push(new_msg)
     })
